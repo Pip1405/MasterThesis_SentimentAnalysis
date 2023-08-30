@@ -1,0 +1,1170 @@
+created_utc,body,score,ups,author,gilded
+1659349737,"paste the script into notepad for better formatting. you will need to create custom agent fields with the same values as what i have put in for cf1, cf2 and cf3, or give them your own names, just copy from the first line of #'s into a powershell script and run as system. i run this script three times a day across all clients.
+
+&amp;#x200b;
+
+\############################  
+\##### install pre-reqs #####  
+\############################  
+  
+\[net.servicepointmanager\]::securityprotocol = \[net.securityprotocoltype\]::tls12  
+install-packageprovider -name nuget -minimumversion 2.8.5.201 -force  
+  
+\######################  
+\##### set fields #####  
+\######################  
+$ateraapikey = ""your\_atera\_api\_key"" # &lt;-- replace ""your\_atera\_api\_key"" with you atera api key found here: https://app.atera.com/admin#/admin/api  
+$cf1 = 'bitlocker\_c\_drive'  
+$cf2 = 'bitlocker\_status'  
+$cf3 = 'last bitlocker check'  
+$blk =(get-bitlockervolume -mountpoint c).keyprotector.recoverypassword  
+$blk\_stat =(get-bitlockervolume -mountpoint c).protectionstatus  
+$blk\_time =get-date -format ""dddd mm/dd/yyyy hh:mm""  
+  
+\#######################################  
+\##### check for and install atera #####  
+\#######################################  
+if (!(get-module -listavailable psatera)) {  
+	install-module -name psatera -force  
+}  
+  
+import-module -name psatera  
+  
+set-ateraapikey -apikey $ateraapikey  
+  
+$agent = get-ateraagent  
+  
+\######################################################  
+\##### check bitlocker status and report to atera #####  
+\######################################################  
+  
+$blk =(get-bitlockervolume -mountpoint c).keyprotector.recoverypassword  
+set-ateracustomvalue -objecttype agent -objectid $agent.agentid -fieldname $cf1 -value ""$blk""  
+set-ateracustomvalue -objecttype agent -objectid $agent.agentid -fieldname $cf2 -value ""$blk\_stat""  
+set-ateracustomvalue -objecttype agent -objectid $agent.agentid -fieldname $cf3 -value ""$blk\_time""",1,,podgerama,0
+1659370352,"alright i gave it a shot, your build still had a decent amount of recoil so i added the strife angled grip and the hatched grip as well as the zac ms stock all to help with horizontal recoil and this might be my new ar
+
+i suppose the barrel you suggested has less recoil",4,,THESHADYWILLOW,0
+1659371851,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1554144284546420737)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 boeing $ba
+    2 $pg
+    3 intel $intc
+    4 home depot $hd
+    5 $ibm
+    6 coca-cola $ko
+    7 walmart $wmt
+    
+    worst:
+    1 travelers $trv
+    2 $dow
+    3 chveron $cvx
+    4 caterpillar $cat
+    5 jpmorgan $jpm
+    6 merck $mrk
+    7 microsoft $msft
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1554145838338818052)
+
+&gt;amazon $amzn announced ""dude perfect"" will call some of its thursday night football games
+&gt;
+&gt;
+&gt;
+&gt;amazon is planning to offer ""different, simultaneous feeds in an effort to reach prime video viewers who might not be typical nfl fans."" - wsj https://t.co/qcmgiznazz",1,,HuzzahBot,0
+1659378649,"when i did my ms build last year, i ordered ck inset7 with the baseplate (devolution baseplate for 1.5 to 1- 1/8"" (30.0mm id)) to fit the ms stock fork. didn't end up needing it with the whiskey cx no. 9 which has the tapered steering tube - no need to ""devolve"" it.
+
+tapered or untapered, any ms-compatible headset you buy can be fitted correctly with the right adapter plate. if you've got headset installed on the bike already - like the stock cane creek 40? -  you don't need to swap out the whole thing. just add or subtract the baseplate.
+
+first choose your fork.",5,,CobbRookie,0
+1659383109,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1554191502145904640)
+
+&gt;twitter $twtr subpoenaed records from morgan stanley $ms, $bac and other financial firms as part of its legal fight with elon musk according to bloomberg",1,,HuzzahBot,0
+1659384003,"even being responsible i hate looking at my credit card statement 
+
+$axp puts📉",4,,TimAppleBurner,0
+1659404220,blackstone bx stock?,1,,toastedmallow,0
+1659412084,"$len down 27% ytd
+$dhi down 28% ytd
+$whr down 29% ytd
+$blk down 30% ytd
+$elux down 32% ytd
+
+if you think there'll be a ""crash"" in housing (40%?) short those.
+
+if you think it's going to be a ""correction"" in housing (15-20%) as i do, then it's too late. it's basically priced in.",1,,werk____it,0
+1659435221,"and a current p/e ratio of &lt;10!  love $jpm, just put a limit order in for another ten shares this morning. got a nice little position in the works.",3,,hotelactual777,0
+1659450640,$bac?,0,,Ready-Quote-7772,0
+1659452734,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1554483532180983809)
+
+    $hkd is currently the 45th largest stock in the world by market cap
+    
+    $hkd is now larger than:
+    
+    mcdonald's $mcd
+    verizon $vz
+    disney $dis
+    adobe $adbe
+    nike $nke
+    $ups
+    qualcomm $qcom
+    $amd
+    intel $iintc
+    morgan stanley $ms",3,,HuzzahBot,0
+1659453341,boa stock $bac is being shorted to the single digits. lul. they should have never said this. get your money out now. 12.8k in options to the short sale side. 🤣 fu boa,7,,migueltaco,0
+1659457860,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1554505029876318208)
+
+&gt;$hkd now has a larger market cap than bank of america $bac and alibaba $baba ... wtf is happening 😂😂😂",2,,HuzzahBot,0
+1659467977,"$hkd is currently the 45th largest stock in the world by market cap  
+  
+$hkd is now larger than:  
+  
+mcdonald's $mcd  
+verizon $vz  
+disney $dis  
+adobe $adbe  
+nike $nke  
+$ups  
+qualcomm $qcom  
+$amd  
+intel $iintc  
+morgan stanley $ms",4,,googley_me,0
+1659485644,"if they’re not gonna put it on max, i don’t see em selling it off. plus just the optics of selling off a major part of your ip looks off. it has batman in it. they probably don’t want anyone else to have a film with batman in it. 
+
+
+zaslav seems okay with just eating tens of $ms so i guess he’ll live with it.",2,,emielaen77,0
+1659519691,"michael saylor owns his keys, and no matter what price bitcoin goes to, there literally is no way to take those away from him, regardless of ms stock price.   an army of 100,000 couldn't get the keys from him.",-1,,theflickering,0
+1659529175,"morgan stanley’s, $ms, andrew slimmon says it's time to go bargain hunting for stocks in august.",1,,Silver28pr,3
+1659531500,$jpm 116 calls,1,,CDCAPITAL,0
+1659559340,"but then you can remember because of that it raised jacoby’s stock, jimmy gs stock, you guys eventually traded them, and won the super bowl that year, and we got to watch godell hand them the lombardi. in hindsight, that suspension was good for you guys.",19,,NateKaeding,0
+1659574252,i bought one share of blackrock stock.,5,,AnxiouSquid46,0
+1659615612,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555164558964277250)
+
+&gt;intel $intc and italy are reportedly close on a $5b deal for an advanced packaging factory according to reuters
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555164622700822528)
+
+&gt;boe gov. bailey: if we do not act now, inflation will worsen and we will have to raise interest rates even more.
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555164787344113665)
+
+&gt;boe gov. bailey: pass-through of boe rate rises has been faster to borrowers than to savers so far.
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555165140810620934)
+
+&gt;blackrock $blk and coinbase $coin announced a partnership today allowing blackrock’s institutional clients to use aladdin $coin's suite of software tools according to the wsj
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555165926139592704)
+
+&gt;boe gov. bailey: the market rate curve is not boe's view of what will happen in the future.
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555166695047806976)
+
+&gt;uk boe dep. gov. broadbent: the situation for global food supply remains very serious.
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555167926096887808)
+
+&gt;boe's ramsden: markets would need to be judged very stressed for us to halt gilt sales.
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555168235737210880)
+
+&gt;lordstown motors $ride had its first ever quarterly profit!!!
+&gt;
+&gt;
+&gt;
+&gt;not from selling cars though ... but from selling its factory to foxconn 😂
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555168261104439296)
+
+&gt;italian cabinet expected to pass €14.3b package on thursday.",2,,HuzzahBot,0
+1659620572,$blk has partnered with $coin to make #crypto directly available to institutional investors. @andrewrsorkin and @jimcramer discuss:,1,,Silver28pr,0
+1659643943,"[https://www.reuters.com/breakingviews/private-equity-needs-more-other-peoples-money-2022-08-04/](https://www.reuters.com/breakingviews/private-equity-needs-more-other-peoples-money-2022-08-04/)  
+**private equity needs more other-people’s-money**  
+\*\*\*\*\*\*\*  
+*deutsche bank, credit suisse and jp morgan will begin marketing the* ***first-ever bond backed by us home-rental cashflows****, a us$500 million trade for private-equity giant blackstone, next wednesday.*   
+\*\*\*\*\*\*\*  
+new york, aug 4 (reuters breakingviews) - for the likes of blackstone (bx.n) and kkr (kkr.n), equity and debt go together like peanut butter and jelly. buyout firms are sitting on $1.4 trillion in cash, but in order to do deals, they need leverage with which to pair it. there aren’t many places for them to find it, at least not in the quantities they might wish.  
+
+
+when steve schwarzman’s private equity lieutenants at blackstone, or their peers, want to buy a company, they typically pair a wad of cash provided by their fund investors with debt. that allows them to target bigger acquisitions, and increase the returns to their equity investors and themselves, by paying down the debt as quickly as possible from the acquired company’s cash flows.  
+
+
+but the syndicated loan market, where bank loans backing private equity deals are parceled up and passed around, has slowed sharply. deals supporting highly-indebted mergers and acquisitions totaled $46 billion in the second quarter, down by 52% from the same period in 2021, according to refinitiv. the market has sagged as investors grapple with rising interest rates and banks try to offload loans made before the market soured.  
+
+
+direct lenders who pool private money, lend to deals and keep hold of those loans – can take up some of the slack. after growing rapidly, they now regularly support big buyouts. direct loans typically cost more than syndicated loans but are faster and can be offered in situations where banks dare not tread.
+
+the catch is that the two debt markets are interlinked. a borrower can take out a direct loan, pay it down until public investors would find it acceptable, then refinance it in the syndicated market after a couple years to get a cheaper interest rate. the direct lender can use that   
+repaid money to immediately fund new deals. but syndicated refinancings for leveraged loans were 41% lower in the first half of 2022 than a year earlier, per refinitiv.  
+
+
+private lenders who have money to invest can thus cherry-pick the best deals. but those who don’t have money may struggle to get more. the amount of private credit funding raised, while similar to a year ago, is running a third below its peak in late 2021, according to preqin. private equity might be ready to put its vast reserves of cash to work. but without ample debt, much of that so-called dry powder might have to stay dry.
+
+direct lenders' dry powder stands at an estimated $210 billion as of the beginning of august, according to preqin. private equity dry powder excluding venture capital, meanwhile, has reached roughly $1.4 trillion.
+
+capital raised by direct lenders totaled $25 billion in the second quarter of 2022, compared to $27.4 billion the prior year but down by a third from the fourth quarter.
+
+u.s. syndicated leveraged loan refinancing volume fell to $249 billion in the first half of the year, down roughly 41% from the year prior, according to refinitiv.
+
+&amp;#x200b;
+
+\*\*\*\*\*\*
+
+good times",3,,Conscious-Sea-5937,0
+1659644772,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555288996519022594)
+
+&gt;cloudflare $net reported earnings posting numbers of
+&gt;
+&gt;
+&gt;
+&gt;eps of $0.00 beating expectations of -$0.01
+&gt;
+&gt;rev of $234.5m beating expectations of $227.4m
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555292488994365442)
+
+&gt;nike $nke declared a quarterly dividend of $0.305 per share
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555293316517974016)
+
+&gt;square $sq just reported earnings posting numbers of
+&gt;
+&gt;
+&gt;
+&gt;eps of $0.18 beating expectations of $0.16
+&gt;
+&gt;rev of $4.40b beating expectations of $4.34b
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555302870622298112)
+
+&gt;general dynamic $gs today was awarded a $890m modification to a previous contract with the us navy
+&gt;
+&gt;
+&gt;
+&gt;the contract has an additional option that could bring the value of the contract up to $1.63b https://t.co/cszmi4dq9p
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555303171202883587)
+
+&gt;twitter $twtr has replied to elon musk's counterclaims calling them ""factually inaccurate, legally insufficient, and commercially irrelevant""
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555316204545495040)
+
+&gt;tesla $tsla shareholders have voted to approve tesla’s proposal to increase its shares outstanding by 4b shares so it can do a stock split
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555317575348887557)
+
+&gt;tesla $tsla has no produced more than 3 million cars
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555318021538856968)
+
+&gt;elon musk just said tesla $tsla has now produced more than 3 million cars in its history
+
+ tweet mirror:[@fxhedgers](https://twitter.com/fxhedgers/status/1555320200412553216)
+
+&gt;tesla holders approve 3-to-1 stock split at shareholder meeting
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555320221761773586)
+
+&gt;aig services index actual 51.7 (forecast -, previous 48.8) $macro
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555320709114728448)
+
+&gt;“when our competitors advertise for electric cars our sales go up” - tesla $tsla ceo elon musk
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555321064418418689)
+
+&gt;elon musk said tesla $tsla may announce another factory location this year
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555321962829910017)
+
+&gt;elon musk said tesla $tsla has already started recycling battery packs
+
+ tweet mirror:[@fxhedgers](https://twitter.com/fxhedgers/status/1555323364700393472)
+
+&gt;musk: tesla may announce another factory location this year
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555323777600442374)
+
+&gt;several chinese cities have tightened property escrow account - security times.
+
+ tweet mirror:[@financialjuice](https://twitter.com/financialjuice/status/1555327770825293827)
+
+&gt;s. korean current account bal nsa actual 5.61b (forecast -, previous 3.86b) $macro
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555333112070037504)
+
+&gt;elon musk did just admit to being an alien on tesla's $tsla annual shareholder meeting ... make of this what you will 😂
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555333223839924224)
+
+&gt;elon musk said the only stock he owns are tesla $tsla and twitter $twtr
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555333999320600580)
+
+&gt;""i do sort of have a grander vision for what i thought x corporation could have been back in the day, it's a pretty grand vision and obviously that can be started from scratch but i think twitter would help accelerate that by 3-5 years"" - @elonmusk $twtr",1,,HuzzahBot,0
+1659654025,"amd was mispriced for a few years when it traded for less than $5 circa 2013-2016. so was apple around 1998 when it traded for less than $1 prestock split/pre stock buybacks. $axp was mispriced in 1963 during the salad oil scandal for a couple of years. $tsla was mispriced after ipo when it dropped from $30 to $15 prestocksplit, it was mispriced for almost 2 years. while most stocks get corrected in weeks or months. there are a good handful of stocks that get mispriced for years. not many but a good handful. $tsla is overpriced going on to 2 years now. but the mispricing also depends on what methodology you use. one method like buffettology might say $tsla is over valued. but if you use another method. it might say its not. value investing is relative to what method is being used to determine value.",1,,RansomLove,0
+1659709040,"goldman sachs’, $gs, credit card business is being investigated by a top us consumer watchdog, the consumer financial protection bureau, a regulatory file seen by bloomberg has shown.",1,,Silver28pr,0
+1659748988,i've read the gs stock split notice 10x... it's beautiful,9,,iupvotefood,0
+1659794515,"tweet mirror:[@visualcap](https://twitter.com/visualcap/status/1555917063729856513)
+
+&gt;made in america: goods exports by state 🇺🇸
+&gt;
+&gt;
+&gt;
+&gt;https://www.visualcapitalist.com/us-goods-exports-by-state/ https://pbs.twimg.com/media/fze6uuiwiaytmqf.jpg?format=jpg&amp;name=4096x4096
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555918129418670080)
+
+&gt;warren buffett and berkshire hathaway $brk.b currently have $105.4 billion of cash and short-term securities on its balance sheet down from $106.3b last quarter
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555919242737876994)
+
+&gt;warren buffett's berkshire hathaway reported earnings this morning posting numbers of
+&gt;
+&gt;
+&gt;
+&gt;rev of $76.2b beating expectations of $72.5b $brk.b $brk.a
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555919637019238401)
+
+&gt;warren buffett's berkshire hathaway took a $53 billion hit on the value of its investments during the quarter giving it a net loss of $43.8b during q2
+&gt;
+&gt;
+&gt;
+&gt;that makes berkshire's eps:
+&gt;
+&gt;-$29,754 for $brk.a
+&gt;
+&gt;-$19.84 for $brk.b
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555920378463232000)
+
+&gt;warren buffett and berkshire hathaway's $brk.b $brk.a equity portfolio is worth $327.7 billion as of the end of q2 down from $390.5b at the end of q1
+&gt;
+&gt;
+&gt;
+&gt;top 4 largest holdings:
+&gt;
+&gt;apple $aapl - $125.1b
+&gt;
+&gt;bank of america $bac - $32.2b
+&gt;
+&gt;coca-cola $ko - $25.2b
+&gt;
+&gt;chevron $cvx - $23.7b
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1555922732793167876)
+
+&gt;warren buffett's berkshire hathaway took a $66.9 billion hit on the value of its investments during the quarter giving it a net loss of $43.8b during q2
+&gt;
+&gt;
+&gt;
+&gt;that makes berkshire's eps:
+&gt;
+&gt;-$29,754 for $brk.a
+&gt;
+&gt;-$19.84 for $brk.b",3,,HuzzahBot,0
+1659800239,"&gt;the slide in u.s. stock prices punished berkshire hathaway inc's (brka.n) bottom line in the second quarter as the company run by billionaire warren buffett posted a $43.8 billion loss.
+
+&gt;berkshire nevertheless generated nearly $9.3 billion of profit from its operating businesses, as improvement from reinsurance and the bnsf railroad offset a loss at the geico car insurer, where car parts shortages and higher vehicle prices boosted losses from accidents.
+
+&gt;rising interest rates and dividend payouts helped berkshire's insurance units generate more money from investments, while the strengthening u.s. dollar boosted profit from the company's european and japanese debt investments.
+
+&gt;berkshire also slowed purchases of its stocks, including its own, though it ended june with $105.4 billion of cash and equivalents it could still deploy.
+
+&gt;""it shows the fickle nature of markets,"" said tom russo, a partner at gardner, russo &amp; quinn in lancaster, pennsylvania, who invests more than $8 billion, of which 17% is in berkshire. ""it's business as usual at berkshire hathaway.""
+
+&gt;net results suffered from berkshire's $53 billion of losses from investments and derivatives.
+
+&gt;stocks of three major holdings -- apple inc (aapl.o), bank of america corp and american express co (axp.n) -- each fell more than 21%, compared with a 16% decline in the standard &amp; poor's 500 (.spx).
+
+&gt;accounting rules require berkshire to report the losses with its results even if it buys and sells nothing.",111,,Korrocks,0
+1659919539,"$snow- $nvda- $abnb- $aapl
+$tsla- $goog- $panw- $cost- 
+$dis- $sq- $jnj- $axp- $nke",2,,6dee9,0
+1659922040,"1) that's not how this works.... devinder doesn't have a robinhood with $8b sitting in it... amd would have investment bank(s) make those buys on there behalf, and thus a competent cfo would've instructed the ibank how amd wants them to repurchase the shares, and ideally a competent cfo would would have a rough number that they believe is the intrinsic value of the company and instruct the ibank to repurchase heavily when the stock is below that range of intrinsic value (e.g. - devinder to $gs: ""buyback 20% of the daily volume for us when the price is below $79"").
+
+2) even if what i said above wasn't true, devinder/lisa/whoever, can take 60 seconds a day and look at $amd's daily chart and know where the stock price is every day... $amd was under $80 for like 2 weeks in july so it's not like they missed their opportunity because it was some one or two day price blip with a low trading volumes.",1,,mn_sunny,0
+1659926607,"https://twitter.com/gurgavin/status/1556448826507948032?s=21
+
+&gt; larry fink ceo of blackrock which is the worlds largest asset manager with over 10 trillion in assets sold another 8% of his own stock last week. this is his biggest stock sale after covid , his last biggest stock sale was right before the covid crash. $blk",15,,qwert1225,0
+1659926759,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1556471735679057922)
+
+&gt;blackrock $blk ceo larry fink sold 44.5k shares of $blk stock last week at an average price of $684.6 per share raising him ~$30.5m before taxes",4,,HuzzahBot,0
+1659929273,"yeah same holdings i think it's just all of the companies share prices just all added up together or something aha cuz idk i mean like there's a lot of freaking shares of different crap in warren's portfolio i mean cmon he's even got over one billion......but........ shares of $aapl now,  and over 1 billion $bac (bank of america shares) lol.",-6,,IsolatedAndH8ted,0
+1659932561,"the ceo of blackrock $blk, the largest asset hf in the world, sold 10% of his shares 8/3. last time he sold was february 2020. do with that what you will",11,,StayingInTheMoney101,0
+1659951785,"down so far pm.  i for one could use some rationality in the market today.
+
+[$jpm downgrades $cvna to underweight from neutral in letter, pt to $35 from $25](https://twitter.com/ive_m5/status/1556548051770261510/photo/1)
+
+cowen adjusts pt to $95 from $142, keeps outperform
+
+edit: $db cuts pt from $54 to $42",5,,SteelColdKegs,0
+1659962024,blackrock stock,1,,TinyDrug,0
+1659973631,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1556668330307735552)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 disney $dis
+    2 walgreens $wba
+    3 $dow
+    4 travelers $trv
+    5 home depot $hd
+    6 $mrk
+    7 american express $axp
+    
+    worst:
+    1 visa $v
+    2 mcdonald's $mcd
+    3 verizon $vz
+    4 coca-cola $ko
+    5 caterpillar $cat
+    6 $ibm
+    7 microsoft $msft",1,,HuzzahBot,0
+1659985432,hahahaha. you think blackrock bought out coinbase? don’t keep the sheeple dumb. $blk.,2,,Bullionfetish,0
+1660089563,"i'm not the person who made the original distinction, but here's my take.
+
+factors and styles are basically the same thing. some firms will tell you that there are subtle differences between them but it's basically all the same thing. aqr says [they're the same](https://funds.aqr.com/insights/fund-promo/style-investing). russell says factors indexes are just [more concentrated style indexes](https://www.ftserussell.com/research/styles-vs-factors-what-they-are-how-theyre-similardifferent-and-how-they-fit-within). 
+
+though when i personally think about the difference between the two, the first thing that comes to mind is the [venn model](https://www.venn.twosigma.com/factors) by two sigma. in that model, factors are basically considered to be drivers of a portfolio's risk/return profile. pretty standard. but there's a split between macro factors and style factors. macro factors represent exposure to things like market, rates and credit risk (core macro) or secondary macro variables like fx risk, inflation-linked vs nominal rates risk (so basically t5yie and t10yie), home country vs foreign market risk (like us vs ex-us for an american investor, canada vs ex-canada for a canadian, etc.). on the other hand, styles represent exposure to *cross-sectional* drivers of risk and return like value and momentum in equities or carry in currencies.
+
+styles are also more of a practitioner-based concept than factors. you don't really see them mentioned that much in academia. there, factors are often seen as proxies for consumption risk (merton's icapm state variable candidates) or expressions of firm-decisions that predict differences in firm-level cost of capital (zhang's icapm factors).
+
+however, these semantics don't really matter. they have nothing to with your criticisms of value. think of the trades a value manager would have on right now. it's not a static long energy and financials short tech portfolio. and even if it was, all throughout this post you're implying that there's a tech industry premium (""modern tech growth strategies are so great"" and things like that) without anything to back it up. but back to the trades. just comparing the enterprise multiples (or p/es for banks) of some household names, it would be long $meta and short (or underweight) $pins. long $trow and short $blk. long $gs and short $ms. long $pep and short $ko. and these trades would probably just be on for a few months or less until the longs were repriced and migrated out of the value basket and/or the shorts were repriced and migrated out of the growth basket. how does a blitzscaling startup mechanically make these trades lose money? about 80% of them won't even be in tech sector. and the majority of those that are will be long and short mature firms. and even then, how does a random tech company's rapid asset growth make the expensive banks or asset managers or food and beverage companies beat the cheap ones? and that's before all the issues we know rapid asset growers face (terrible empirical performance, theoretically low cost of capital holding productivity constant per zhang's icapm, historically poor earnings growth in periods of low payout ratios for the market as a whole, etc.). i'm not saying the idea is completely terrible, there's definitely a lot of merit to the q-eg factor and to investing in companies with high levels of intangible investment, but even those strategies don't kill value investing. they're completely separate. the long-term correlation coefficient between hml and expected growth is 0.06. it's even positive. and the guy who discovered the expected growth factor literally publicly stated that he still has his own money in scv... 
+
+anyways, it seems like you have a background in finance, so what do you even want us to tell you? you already know these counterarguments, so what do you really want to hear? that all academic and practitioner research on stock selection since fama-french or even security analysis is completely useless now despite the fact that new evidence confirming those core ideas is still continuously being brought to light? do you want the green light to buy arkk? pre-ipo shares in the next uber but for pool supplies?",4,,throwaway474673637,0
+1660098102,"love $spgi. total hidden gem. 
+
+$bx too .",3,,curtaincomesoff,0
+1660107126,morgan stanley ($ms),1,,Honey_Butter_Chipz,0
+1660133379,"&gt;cpi estimates:
+
+&gt;goldman sachs, $gs: 8.8%
+
+&gt;citi, $c: 8.8%
+
+&gt;bank of america, $bac: 8.7%
+
+&gt; jpmorgan, $jpm: 8.7%
+
+&gt;wells fargo, $wfc: 8.7%
+
+&gt;morgan stanley, $ms: 8.6%",12,,SlowLoris1337,0
+1660152354,"tweet mirror:[@michaeljburry](https://twitter.com/michaeljburry/status/1557417950155456512)
+
+&gt;""...the raid looks like prosecutorial overkill and a bad mistake. document disputes are typically settled in negotiation, and that is how mr. trump’s disagreement with the national archives had been proceeding.""
+&gt;
+&gt;
+&gt;
+&gt;https://t.co/mntkdcrbko
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1557418624872235014)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 boeing $ba
+    2 salesforce $crm
+    3 disney $dis
+    4 goldman $gs
+    5 $dow
+    6 nike $nke
+    7 jpmorgan $jpm
+    
+    worst:
+    1 merck $mrk
+    2 $jnj
+    3 unitedhealth $unh
+    4 walmart $wmt
+    5 amgen $amgn
+    6 verizon $vz
+    7 coca-cola $ko",1,,HuzzahBot,0
+1660162769,"undoubtedly, this is a riskier play than $oxy or $bac, but it's not doomed to certain failure. you just need to manage it correctly.
+
+you seem to have a handle on what you need to do, just execute it. 
+
+p.s.
+
+and be happy with the xx% gains, this kind of investing (theta gang) does not (and should not) produce xxxx% wins.",1,,gnibblet,0
+1660165404,"&gt;breaking: the former head of jpmorgan's, $jpm, precious-metals business and his top gold trader were found guilty on charges they manipulated markets for years.",13,,BarryBearerson,0
+1660166477,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1557477184692015105)
+
+&gt;""the former head of the jpmorgan chase &amp;amp; co. precious-metals business and his top gold trader were convicted by a federal jury in chicago on charges they manipulated markets for years"" - bloomberg $jpm",8,,HuzzahBot,0
+1660223928,"buy him gs stock
+
+pretty sweet gift to own a piece of the club",1,,moriero,0
+1660224071,$dis $aapl $axp calls lets fuckkkinnn goooooooo,1,,ImHungryAsFuck,0
+1660229048,"jpmorgan, $jpm, marko kolanovic says time to sell stocks, buy commodities.",2,,cebs83,0
+1660244309,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1557803636335542273)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 disney $dis
+    2 chevron $cvx
+    3 $dow
+    4 travelers $trv
+    5 caterpillar $cat
+    6 goldman $gs
+    7 jpmorgan $jpm
+    
+    worst:
+    1 $jnj
+    2 unitedhealth $unh
+    3 amgen $amgn
+    4 salesforce $crm
+    5 microsoft $msft
+    6 boeing $ba
+    7 mcdonald's $mcd
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1557803882725740544)
+
+&gt;*samsung's foldable phones attract three times more brand switchers than its other flagship offerings, samsung mobile chief roh tae-moon says -- wsj
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1557803994113888261)
+
+&gt;*newcomers represented 'double-digit percentage' of samsung foldable-phone sales in 2021, mobile chief roh says -- wsj
+&gt;
+&gt;
+&gt;
+&gt;*samsung's z fold phones retain prior customers at rates of up to 10% higher than galaxy s flagship devices, mobile chief roh says -- wsj
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1557804109125795841)
+
+&gt;*new jersey american water completes acquisition of bound brook sewer system 
+&gt;
+&gt;$awk
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1557804834320957442)
+
+&gt;the cdc today eased its covid-19 guidance saying the virus now poses a much lower risk of severe illness, hospitalization and death compared to earlier in the pandemic according to cnbc",1,,HuzzahBot,0
+1660262348,i can’t buy bank of america merchandise with bank of america stock,1,,Logical-Cut-6993,0
+1660281325,guys...the solution is simple. buy blackrock stock so you profit form your own enslavement. become your own slavemaster. but seriously if we buy enough stock then collectively we can start voting for better policies.,1,,43morethings,0
+1660329177,remember when $bx was the highest declared short on cenn and they paid professional shills to write a fud article? pepperidge farms remembers.,14,,19neo91,0
+1660338762,"i sold all my stocks (memes and other bullshit) in january for a 6k loss (around the total amount that i took as realized gains the year before), i then bought all blue chips and etfs. i was down -18% at the most, and now i'm down -8%. i feel like i can finally see the light at then end of the tunnel lol. $dis and $jpm both went green for me this week.",1,,zmmason87,0
+1660485255,"question:  what’s your view on $c - trade or longer term hold?  for my long account i’m still adding banks here, specifically $bac &amp; $jpm. . . .   i’m working on a dd for long hold on $bac, but being new to bank equities, it has slowed my analysis.  curious about your take.",4,,CornMonkey-Original,0
+1660503304,"i don’t own but would rather own micro strategy stock than mining stocks. they are similar market caps and in my opinion there’s no way the mining stocks can catch up to the total amount of bitcoin accumulated as ms. mining stocks might have an energy play that goes beyond just bitcoin held, but there’s also many potential plays microstrategy could evolve into along the way as their warchest increases in value.
+
+i personally just buy bitcoin, but that’s my view on ms stock vs mining stocks.",3,,InformationOk9318,0
+1660569371,"small adjustment to your understanding... there are mutual funds and etfs that are 'actively managed' which is is the ""put your money in the hands of experts"" situation. these are smart people [occasionally] doing smart people things behind the scenes. they're human, so they can make mistakes.
+
+index funds mostly take the humans out of it (i.e. 'passively managed'). there are usually hard rules to determine if a company meets the qualifications to be in a specific index. if yes then buy else don't buy.
+
+for example, the retail sector index ([xrt](https://money.usnews.com/funds/etfs/consumer-cyclical/spdr-s-p-retail-etf/xrt#about)) only includes retail companies. so it'll buy best buy stock but it won't buy bank of america stock because bank of america will be in the financial sector index ([vfh](https://investor.vanguard.com/investment-products/etfs/profile/vfh))
+
+these two 'sector' indexes still involve humans (i.e. you) to pick the sector that will have a lot of winners and not a lot of losers.
+
+the simplest path to wealth is to pick the total us stock market index ([vtsax](https://advisors.vanguard.com/investments/products/vtsax/vanguard-total-stock-market-index-fund-admiral-shares)) which buys every single stock in the us. if publicly traded stock in us then buy else don't buy.
+
+or if you're nervous about picking the us as the winner over every other country, you can pick a total world stock index fund ([vtwax](https://advisors.vanguard.com/investments/products/vtwax/vanguard-total-world-stock-index-fund-admiral-shares))
+
+the point is, index funds are less smart people doing smart people things and instead just passively following whatever index they've been created to follow. it's more rule based and thus more predictable
+
+average people should pick the biggest index they're comfortable with (us or world) so that they're ultra diversified and will own all the winners. you just have to trust that capitalism and government intervention will make sure there are more winners than losers in aggregate",4,,mildly_enthusiastic,0
+1660580249,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1559212672494837762)
+
+&gt;activist investor elliott management has a large position in cardinal health $cah and is seeking a handful of seats on its board according to the wsj
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1559213905016233984)
+
+&gt;american express $axp said us consumer card member total loans were $65.1b up from $63.7b in june
+&gt;
+&gt;
+&gt;
+&gt;30 days past due loans as a % of total: 0.7% unchanged from june",2,,HuzzahBot,0
+1660581396,"tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1559217482757554177)
+
+&gt;u.s. secretary of defense austin says he test positive on monday for covid-19 -statement
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1559217594539954181)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 disney $dis
+    2 visa $v
+    3 boeing $ba
+    4 mcdonald's $mcd
+    5 coca-cola $ko
+    6 procter &amp;amp; gamble $pg
+    7 goldman $gs
+    
+    worst:
+    1 chevron $cvx
+    2 $dow
+    3 merck $mrk
+    4 3m $mmm
+    5 cisco $csco
+    6 caterpillar $cat
+    7 jpmorgan $jpm
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1559218136053850112)
+
+&gt;third point holds roughly $1 billion stake in walt disney co, owning 0.4 pct of company's shares - sources
+&gt;
+&gt;$dis
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1559218495841345539)
+
+&gt;dan loeb's third point has a $1 billion stake in disney $dis representing about 0.4% of the company",2,,HuzzahBot,0
+1660593256,"max out your roth ira, use the rest after maxing out in your roth towards a taxable account.
+
+in your roth stick to $schd, $vti (or $voo), and one more of your choice (usually a reit like $o, $stag, etc.).
+
+there is absolutely no need to to have 20+ holdings in a dividend/roth ira, unless you are not able to get $schd and $vti/$voo (usually this applies to non americans).
+
+in your taxable account keep growth champions like $aapl, $msft, $amzn, $googl, $axp, etc.",2,,RexCrimson_,0
+1660619031,"age 18 current portfolio - $26,777.61
+etfs - 63.07%
+stocks - 34.06%
+cash - 2.87%
+
+etfs
+$voo - 26.50%
+$schd - 16.53%
+$dgro - 8.22%
+$qqq - 6.18%
+$vti - 5.64%
+
+stocks
+$jpm - 5.08%
+$trow - 4.86%
+$dis - 4.28%
+$vici - 4.13%
+$meta - 3.37%
+$aso - 2.23%
+$abbv - 2.13%
+$avgo - 1.94%
+$baba - 1.77%
+$googl - 1.37%
+$sbux - 1.08%
+$nio - .94%
+$posh - .88%",8,,The_Squid101,0
+1660644656,my biggest pet peeve! like it’s some nefarious scheme to make money by giving away $ms,1,,-hiphopopotamus-,0
+1660653181,thoughts on wells fargo $wfc slowly getting out of mortgages and being called to testify at senate ?,1,,Badboyardie,0
+1660658261,"blackrock, $blk, strategists expect u.s. company earnings to deteriorate and the federal reserve to hike interest rates to a level that will “stall the economic restart,” per marketwatch.",1,,DoNamTrung69,0
+1660660919,yeah - i’m planning on long hold myself for $c &amp; $bac. . .   i think they will be good positions to be in.,2,,CornMonkey-Original,0
+1660665228,"in 2007, you could see the handwriting on the wall regarding the financial meltdown
+. i began liquidating to cash so that by november, i was over 50% in cash. then the crash hit. it was huge. bank of america stock dropped from $40 to $3 a share. everything got decimated. 
+
+i sat out until march 2008, when things stabilized. then i started buying again. scooped up all the bargains. killed it. been buying and holding dividend payers ever since.",1,,[deleted],0
+1660668283,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1559581913668542465)
+
+    best and worst performing large cap stocks so far today
+    
+    best:
+    1 walmart $wmt
+    2 home depot $hd
+    3 $ibm
+    4 walgreens $wba
+    5 nike $nke
+    6 $dow
+    7 procter &amp;amp; gamble $pg
+    
+    worst:
+    1 salesforce $crm
+    2 3m $mmm
+    3 visa $v
+    4 microsoft $msft
+    5 goldman $gs
+    6 apple $aapl
+    7 american express $axp
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1559583374616006659)
+
+&gt;amazon confirms it will raise seller fees for holidays
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1559583856700887040)
+
+&gt;amazon inc - will introduce a holiday peak fulfillment fee for selling partners from october 15, 2022 to january 14, 2023
+&gt;
+&gt;
+&gt;
+&gt;amazon says holiday peak fulfillment fee will be an average of 35 cents usd per item sold using u.s. and canada fba
+&gt;
+&gt;$amzn",3,,HuzzahBot,0
+1660677771,"your lucky to have it stock, my ms stock it for quarter 1 before forgetting it the rest of the year.",1,,Meankatty,0
+1660749033,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1559920602445643778)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 walmart $wmt
+    2 chevron $cvx
+    3 merck $mrk
+    4 travelers $trv
+    5 $ibm
+    6 johnson &amp;amp; johnson $jnj
+    7 apple $aapl
+    
+    worst:
+    1 boeing $ba
+    2 intel $intc
+    3 walgreens $wba
+    4 visa $v
+    5 3m $mmm
+    6 american express $axp
+    7 $dow",2,,HuzzahBot,0
+1660756485,"u/ayymg63 bank of america’s, $bac, savita subramanian says market hasn’t bottomed yet, and another pullback is likely.",1,,Silver28pr,0
+1660758722,the $gs 335/330s for 9/2 will be close to filling at 20% with a little pullback too. that would be a safer play,1,,lilsgymdan,1
+1660762543,just sold blackstone stock to purchase more bbby ![img](emote|t5_2th52|4270),1,,emperor_osiris,0
+1660767677,"bank of america, $bac, says overdraft fee revenue fell 90% since last year.",2,,Silver28pr,0
+1660783851,$wba and $mmm and $csco and $jpm,1,,dlowcious,0
+1660815107,"fun fact: no mac, no ux until, well, the ms stock took off c~2012¿. /s",1,,HauntingAd6535,0
+1660835579,"do you know exactly how wealthy he is? is it in the single, double or triple digit $ms or $b range",2,,selffulfilment,0
+1660840736,"following $xlf weakness, $bac  weak",1,,IzzyGman,0
+1660847389,"this make me want to sell my ms stock 🤦‍♂️
+
+no but really this game is terrible, the controls are unplayable. 
+
+that said, as both an xbox and playstation owner (damn you, exclusives)  gamepass is still the best deal in gaming, coupled with an easy to use and rewarding system with ms rewards. even the xbox ui blows sony away. simple tasks can feel like a chore on the ps.",1,,MattyBizzz,0
+1660852949,"small red day today for the day trading account. sitting at 56% wins and 1.7pf for the week and finally green on the month after a terrible start.  
+
+swing account closed green.  currently holding 
+long: $amd $amzn $$aapl $jpm $gs $sedg $low (bps) $jnj
+
+short: $mrna (p) $spy (p)",1,,IzzyGman,3
+1660877844,"us equities saw the largest 1-day increase in gross trading flow since 6/16 driven by short sales on 08/18, per goldman sachs, $gs.",10,,cutiesarustimes2,0
+1660913876,we shall start squeezing the fuck outta $bac next,2,,ComplexElegant776,0
+1660914178,"come on guys. if we squeeze $bac up, we can make a lot on the way down too",-1,,ComplexElegant776,0
+1660921457,my birthday is today. all i want for my birthday is that $bac sees a 40% squeeze soon.,2,,ComplexElegant776,0
+1660921595,$bac to $40!????? need it asap,2,,ComplexElegant776,0
+1660925789,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1560661971514494976)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 $jnj
+    2 merck $mrk
+    3 unitedhealth $unh
+    4 walgreens $wba
+    5 mcdonald's $mcd
+    6 verizon $vz
+    7 coca-cola $ko
+    
+    worst:
+    1 boeing $ba
+    2 salesforce $crm
+    3 jpmorgan $jpm
+    4 disney $dis
+    5 intel $intc
+    6 goldman $gs
+    7 3m $mmm",1,,HuzzahBot,0
+1660932864,"tweet mirror:[@fxhedgers](https://twitter.com/fxhedgers/status/1560691645409939456)
+
+&gt;98 counterparties take $2.222 tln at the fed reverse repo op https://pbs.twimg.com/media/faiwxzbueaahbdi.jpg?format=jpg&amp;name=4096x4096
+
+ tweet mirror:[@deitaone](https://twitter.com/deitaone/status/1560691791665455110)
+
+&gt;u.s. federal deposit insurance corporation orders crypto exchange ftx to cease and desist claims its products are government guranteed
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1560692169467432962)
+
+&gt;warren buffett's $brk.b top 3 largest holdings as of the end of q2
+&gt;
+&gt;
+&gt;
+&gt;apple $aapl: $125.1b
+&gt;
+&gt;bank of america $bac: $32.2b
+&gt;
+&gt;coca-cola $ko: $25.2b
+&gt;
+&gt;
+&gt;
+&gt;occidental's $oxy market cap is currently ~$65b, so if buffett was able to get 50% at the current price it would be his 2nd largest holding
+
+ tweet mirror:[@fxhedgers](https://twitter.com/fxhedgers/status/1560692176337584128)
+
+&gt;98 counterparties take $2.222 tln at the fed reverse repo op https://pbs.twimg.com/media/faixqtduyaawiwa.jpg?format=jpg&amp;name=4096x4096",2,,HuzzahBot,0
+1660933020,"warren buffett's $brk.b top 3 largest holdings as of the end of q2
+
+apple $aapl: $125.1b
+bank of america $bac: $32.2b
+coca-cola $ko: $25.2b
+
+occidental's $oxy market cap is currently ~$65b, so if buffett was able to get 50% at the current price it would be his 2nd largest holding",3,,Silver28pr,0
+1660989505,sort of bit not really. you own blackrock stock blackrock buys all the companies and then give you dividends on your blackrock stock with returns from all the companies they own.,3,,EstablishmentFree611,0
+1661002172,"range from 1k - 18 mil, quite the spread. 
+
+eight members are under a million. 
+
+five of them are between 1mill to 2.6
+
+gottheimer at 18.2 a good chunk of that is from ms stock where he used to work.",6,,Graphics_Nerd,0
+1661038906,"on 7 september 2001, the number of ‘put options’* on british airways was four times normal volumes. british airways shares dropped 42 per cent over the following week.
+
+between 6-7 september, 4 744 put options were bought on united airlines, six times the normal volumes. assuming that 4 000 of these options were bought by terrorists with advance knowledge of the imminent attacks, these ‘insiders’ would have profited by almost $5 million.
+
+on 10 september, 4 516 put options were bought on american airlines, 285 times normal volumes. assuming that 4 000 of these options were purchased by ‘terrorist insiders’, they would have netted a gain of about $4 million.
+
+morgan stanley occupied 22 floors of the world trade centre and was severely affected by the attacks. trading of put options on morgan stanley stock averaged 27 contracts per day before 6 september, but from 6 – 10 september, 2 157 ‘october $45 put options’ were purchased. morgan stanley’s share price fell from us$48.90 to us$42.50 in the aftermath of the attacks. assuming that 2 000 of these contracts were bought with knowledge of the approaching attacks, these purchasers could have profited by at least $1.2 million.
+
+merrill lynch had headquarters near the twin towers and averaged 252 contracts per day before 6 september. the period 5-10 september saw 12 215 ‘october $45 put options’ bought. when trading resumed after the attacks, merrill lynch’s shares fell from us$46.88 to us$41.50. assuming that 11 000 option contracts were bought by ‘terrorist insiders’ their profit would have been about $5.5 million.
+
+a raytheon option that makes money if shares are more than $25 each had 232 options contracts traded on the day before the attacks, almost six times the total number of trades that had occurred before that day. a contract represents options on 100 shares. raytheon shares soared almost 37 percent to $34.04 during the first week of post-attack u.s. trading",5,,[deleted],0
+1661082631,"jpmorgan, $jpm, ceo jamie dimon told wealthy clients there's a chance the us is heading into 'something worse' than a recession, per bi.",4,,Cap_Space,0
+1661089281,"perfectionist, bfa barrel, mx silencer, zac ms stock, strife angled foregrip and 3-6 scope all help with the recoil.",2,,spideyjiri,0
+1661091169,"“jpmorgan, $jpm, ceo jamie dimon told wealthy clients there's a chance the us is heading into 'something worse' than a recession, per bi.“
+
+a continued democratic trifecta, stay strong. ✊🏼😟😔",8,,FlomanNYY1,0
+1661101033,"🌎💵📰 die heutige tastatursche, weltpolitische gesamtgemenge- &amp; makroschau wird ihnen präsentiert von aktien brauerei kaufbeuren - dann manchmal ist der markt mit einem kühlen hellen einfach grüner
+
+**kapital, geldpolitik &amp; währungen**:
+
+* saudi-arabien kauft sich gerade massiv bei fettbürgerischen anleihen, aktien und immobilen ein. in den letzten drei monaten gab es einen [rekordinflow von 45 mrd. talern](https://nitter.ca/jnordvig/status/1561199908643901440#m). [die kinermänner](https://nitter.ca/jnordvig/status/1527971900579782656#m) schlagen trotz (oder gerade wegen?) aller politischen verwerfungen ebenfalls weiterhin fleißig zu. jens norvig sieht dies als zeichen dafür, dass der taler als globale *reserve currency* noch nicht ausgedient hat (unser freund ray dalio hatte mal das gegenteil behauptet)
+* nachdem der kinermänner-yuan lange zeit recht stabil gegenüber dem dollar war geht es jetzt mir [rmb/usd](https://nitter.ca/jnordvig/status/1560655327300689923#m) in die gleiche richtung wie bei vielen anderen währungen
+* der [financial conditions index](https://nitter.ca/michaelaarouet/status/1561284902049521667#m] im lauf der zeit zurück bis 1970. aktuell haben wir immer noch eine recht freigiebige und taubische geldpolitik
+* [analyse zur fed balance sheet reduction](https://www.cfr.org/blog/why-fed-tightening-more-it-thinks-0?utm_medium=social_share&amp;utm_source=tw) - mit der meinung, dass ungewollt stärker die daumenschrauben angezogen werden als vom bundesstaatlichen reserve system eigentlich gewollt. die fed selbst sagt auch was zu: [substitutability between balance sheet reductions and policy rate hikes: some illustrations and a discussion](https://www.federalreserve.gov/econres/notes/feds-notes/substitutability-between-balance-sheet-reductions-and-policy-rate-hikes-some-illustrations-20220603.htm)
+
+**wirtschaftslage, konsumklima &amp; inflation**:
+
+* der größte, britische beinhalterhafen ist seit heute mit einem [achttägigen streik weitgehend lahmgelegt](https://www.dw.com/en/uks-biggest-cargo-port-on-strike-amid-cost-of-living-woes/a-62879140) - das bestimmt gut für die zweistellige teetrinkerinflation
+* ein bisschen bärenpornografie bei den ungewöhlichen-walen: [jpmorgan, $jpm, ceo jamie dimon told wealthy clients there's a chance the us is heading into 'something worse' than a recession](https://nitter.ca/unusual_whales/status/1561201677713145856#m) &amp; [u.s. productivity dropped in the second quarter, posting its largest annual decline largest ever.](https://nitter.ca/unusual_whales/status/1561186578189393921#m). kaisersoße ebenfalls [sehr bärisch unterwegs](https://nitter.ca/james56487175/status/1561065139675156480#m) und mit 50% seines portfolios in bargeld &amp; anleihen
+* grafik zu den deutschen [ppi werten zurück bis 1949](https://nitter.ca/michaelaarouet/status/1560541502891347968#m) - wir erleben etwas historisches meine freunde
+* [artikel bei business insider zur situation des fettbürgerischen immobilenmarkts](https://nitter.ca/jamesfaris_/status/1560645261327728641#m) von molly boesel, die davon ausgeht, dass uns nichts blüht was vergleichbar zu 2008 wäre - immobilienpreise aber trotzdem fik
+* [gebrauchtwagenpreise bei den fettbürgern](https://nitter.ca/calculatedrisk/status/1561368304249278464#m) gehen erstmals seit ewigkeiten signifikant zurück, sind aber immer noch auf historisch hohem niveau
+* interessanter artikel der mauerstraßenzeitschrift, in dem die frage aufgeworfen wird, wie [wirtschaftswissenschaftler sich bei der inflationserwartung](https://www.wsj.com/articles/on-inflation-economics-has-some-explaining-to-do-11655294432) so verschätzen konnten
+* das große, schlaue geld ist so [kurz &amp; bärig positioniert](https://nitter.ca/nicholastreece/status/1560712917510754307#m) wie seit den 1990ern nicht mehr - mit passenden grafiken dazu (auf die korrektur in beitrag 2 achten)
+* [zahlungsverzüge bei den verschiedenen, fettbürgerischen schuldnerkategorien](https://nitter.ca/nicholastreece/status/1560980669735616512#m) (kreditkarte, autokredit, immobilienkredit, ...) nehmen wieder leicht zu, sind aber im vergleich zu den letzten 20 jahren immer noch unterdurchschnittlich unterwegs 
+
+**kiner &amp; legreinland**:
+
+* in kiner werden auf grund der hitzewelleninduzierten stromknappheit in der region sichuan alle industriellen verbraucher bis 25.8. vom netz genommen. unter anderem vw, tesla, toyota und diverse düngemittel-/aluminiumhersteller sind davon betroffen. [blühberg schreiend dazu](https://nitter.ca/financialjuice/status/1561337224179978241#m). auch auf die weltweiten märkte für agrargüter könnte das entsprechende auswirkungen haben: [reuters - china issues first national drought alert, battles to save crops in extreme heatwave](https://www.reuters.com/world/china/china-issues-first-national-drought-alert-battles-save-crops-extreme-heatwave-2022-08-19/)
+* [kinermänner und japan](https://nitter.ca/financialjuice/status/1561071730533273600#m) wollen sich im herbst zu einem (wirtschafts)gipfel treffen
+* [kinermänner kohleimporte aus russland](https://nitter.ca/chigrl/status/1561307831881662464#m) legen im juli um 14% zu und erreichen damit ein 5-jahres-hoch
+* kommentar bei der deutschen welle zur aktuellen, wirtschaftlichen situation im kinerland und welche folgen diese für die welt hat: [why china's economy is in trouble and what it means for you](https://www.dw.com/en/why-chinas-economy-is-in-trouble-and-what-it-means-for-you/a-62823625)
+
+**allgemeines &amp; vermischts:**
+
+* die fettbürger haben israel darüber informiert dass (noch) kein deal mit dem iran erreicht wurde. schöne schlagzeile dazu: [u.s. tries to reassure israel over possible iran deal - israeli offifical said they aren't reassured](https://www.axios.com/2022/08/20/iran-nuclear-deal-israel-biden-concessions). gleichzeitig hat man im iran wohl einer der forderungen ausgegeben, die bisher zwischen einem deal standen: [cnn - https://nitter.ca/financialjuice/status/1561337224179978241#m](https://edition.cnn.com/2022/08/19/politics/iran-nuclear-deal-progress/index.html). wäre am ende wohl stierisch für tankerstöcker und bärisch für den ölpreis. interessanterweise sind aktuell schon tanker mit heimatbasis persischer golf zu 95% ausgelastet...ein schelm wer böses dabei denkt. 
+* [s&amp;p 500 vorwärts-p/e und reale 10-jährige, fettbürgerische staatsanleihenverzinsung nahezu im gleichklang](https://nitter.ca/michaelaarouet/status/1560911034751373312#m) - was uns das sagt? da bräuchte ich eure hilfe...
+* kommentar von jason bordoff zum fettbürgerischen [inflation reduction act (ira)](https://foreignpolicy.com/2022/08/17/biden-climate-ira-subsidies-solar-wind-batteries-foreign-policy-emissions/) auf foreignpolicy.com
+* bei den dividendenaristokraten ist die [rezession wohl schon voll eingepreist](https://nitter.ca/nicholastreece/status/1560693608378138624#m)
+* macroalf mit einer neuen folge seines kapselgipsverbands [""the macro trading floor""](https://nitter.ca/macroalf/status/1561366987401478144#m) - prädikat hörenswert
+* [fettürgerisches bevölkerungswachstum](https://www.census.gov/library/stories/2021/12/us-population-grew-in-2021-slowest-rate-since-founding-of-the-nation.html) mit dem geringsten, prozentualen zuwachs (0,1%) seit dem unabhängigkeitskrieg - wo sollen denn da im zukunft die fleißigen konsumenten her kommen :(
+* [25-jahres-hoch beim verhältnis capex zu aktien-buyback](https://nitter.ca/tavicosta/status/1561109485946429440#m) - firmen kaufen im vergleich zur vergangenheit mehr ihrer eigenen aktien zurück und investieren weniger geld ins geschäft",34,,qwertz238,0
+1661114764,$jpm call heavy pop.,4,,Successful-Bike2850,0
+1661130623,just barely otm puts on $jpm @ 118,2,,UpbeatDoor3964,0
+1661185828,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1561752654384070660)
+
+    best and worst performing dow jones stocks so far today
+    
+    best:
+    1 $pg
+    2 verizon $vz
+    3 unitedhealth $unh
+    4 johnson &amp;amp; johnson $jnj
+    5 chevron $cvx
+    6 merck $mrk
+    7 mcdonald's $mcd
+    
+    worst:
+    1 intel $intc
+    2 salesforce $crm
+    3 disney $dis
+    4 microsoft $msft
+    5 boeing $ba
+    6 $axp
+    7 $wba",2,,HuzzahBot,0
+1661215658,me thinks $jpm put him up to this,1,,JerLesh,0
+1661261062,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1562068206310801408)
+
+    most active stocks in today's pre market trading
+    
+    general motors $gm
+    twitter $twtr
+    $csx
+    chevron $cvx
+    marathon $mro
+    $ssnc
+    nvidia $nvda
+    hershey $hsy
+    apple $aapl
+    monster $mnst
+    microsoft $msft
+    dupont $dd
+    $bac
+    mcdonald's $mcd
+    intel $intc
+    zoom $zm
+    carnival $ccl
+    ford $f
+    amazon $amzn",1,,HuzzahBot,0
+1661269008,probably $blk,2,,apeonpercs,0
+1661286728,"yes, as others have pointed out, $tqqq would be a good one.  $wfc (wells fargo) or $bac (bank of america) are also pretty stable and in your price range.",7,,Tharkun,0
+1661289031,"are dividends really the justification for the price of stocks, though?  it seems to me that capital gains so far outstrip dividends that despite everyone's talk of ""intrinsic value"", stocks are just as much powered by greater fools as something like crypto or fine art.
+
+for example, microsoft didn't pay dividends until 2004.  your purchase in 1986 of ms for $0.10 (split adjusted) would have to wait almost twenty years before you started getting the first quarterly dividend of $0.08.  by then the share price was $27; the dividend hardly seems like the motivation for buying the stock, even if you got in on the (retail) ground floor.
+
+if you bought your ms stock in 2000 for $20, and held until now, you would have accumulated $20.63 in the last 18 years in dividends.  this seems like a pretty poor return (less than 4%).  meanwhile, the current price is $274.",2,,steve_b,0
+1661304505,$t $f $bac $ally are all inexpensive stocks that i believe have a solid foundation and will continue to do well. meme stocks scare me lol.,0,,Busy_Mama13,0
+1661309728,"it's because faang are growth stocks while microsoft is a price stable dividend stock.  you buy ms stock for the long haul, not to flip it.",2,,malthuswaswrong,0
+1661349187,“$sofi reportedly offering block trade to $jpm &amp; $gs - market rebellion” not sure how legit this is.,3,,undeadcreed,2
+1661365464,"buy the stocks that crashed the most that have a “fortress balance sheet” those are the ones that will rocket when the economy recovers. see charts of $axp, $wfc, $aapl, $goog in 2009 to now. use those as your case study.",1,,RansomLove,0
+1661375950,"as someone who is responsible (sorry) for shifting a major it software vendor from perpetual products to subscription i can safely say you have a lot of assumptions that are invalid.
+
+loosing customers who paid once and never paid again doesn't matter as it doesn't drive revenue and only generates costs.
+
+while a company is in growth mode (customer acquisition) it doesn't matter as the growth in revenue from new customers is enough to keep shareholders happy and generate big exec bonuses.  the increasing cashflow of net new customers pays for the expansion and maintenance.
+
+once a company finds it has tapped out a growth strategy that becomes unsustainable  due to what happens to cash flow.
+
+at this point a company needs to find other ways to pay the recurring costs of all those customers they acquired - the growth in net new customers is not enough to cover those costs at the margins required.
+
+that's just one angle, i have others like this, but don't want to bore you, lol :-)
+
+the ms model is not just good on paper, it is exceptionally good on the bank accounts in terms of cashflow and margin.  why do you think ms stock has risen (there is a reason they munge office and azure numbers together....)",4,,scytob,0
+1661395705,"if you’re interested in real estate, you have to start at cash flow. how long are you willing to wait to become cash flow positive?
+
+residential real estate might give you leverage but you’re at the whim of residential tenancies laws and tenants. a lot (i’d say most but can’t back that with data) of tenants are genuinely pretty good. but there is a class of people who are professionals at gaming the system. because of this, it is remarkably hard to be cash flow positive with a single residential property. leverage is nice, but you always have to account for needing to drop $10k+ into your property before it is rentable again. and if you go residential, you have to be prepared to go 12-18 months without getting paid rent.
+
+commercial is another option. i’m biased in favour of commercial because i bought into the commercial world a long time ago and it’s been a great investment. it’s more expensive but way more predictable and if you’re remotely entrepreneurial, you can often become your own tenant. you get the same leverage but with more predictable cash flows (unless you’re bad).
+
+anyways, on to your questions.
+
+corporate structure is complicated and i really recommend asking a very good lawyer. owning real estate will make you an attractive target for law suits. if i had hired a lawyer when i first got into commercial real estate, i would be about a decade ahead of where i am. don’t be me - lawyer up as soon as you can, tell them everything and do exactly what they say. they are experts at taking money from people who own real estate - take their advice on how to protect your money from other versions of them. there are too many variables to even start to get into here.
+
+as for management companies, i have been really lucky. i started working with a realtor who was just getting started in his career but whose parents were extremely successful in the industry. i have always asked him for help and always ended up with great management companies. anecdotally, i have worked with four different management companies and they are all husband/wife teams. for all four, one partner has a ticket in a trade and the other is an accountant. it makes sense when you think about it, but the commonalities are really crazy to think about.
+
+as for units, obviously i’m biased in favour of commercial over residential. commercial has its own bullshit but it’s way more predictable provided you or your representative is good at negotiating. buying a property is a lot like looking at a property - find quality builds (so you don’t spend your ‘leverage’ fixing shit. location matters to an extent but also remember the joys of gentrification. my very favourite holding was located in a complete shit hole area in a shit hole city when i bought it. then it got gentrified and between the craft brewer and tech companies with founders who are way cooler than me, i am beyond happy.
+
+calgary is a weird city because of the o&amp;g boom and busts. when oil is low, you’ll find bargains. when oil is high, you’ll pay $ms for cardboard. on the other hand, when oil is high, you’ll lease to coke fiends and when oil is low, they can’t afford to look. areas are really unpredictable- the city seems to gentrify or go to shit on seven year cycles. i keep hearing that calgary will become a tech centre but the founders absolutely suck at being alive.
+
+if i owned residential, i’d do one or two pets (but no more) and drop rent for good tenants. some people are really responsible and just want a stable place for their animals. those are the kinds of tenants i’d like. commercial is the opposite. take your dog to work companies go out of business.
+
+i hope this helps a bit but it’s just my experience.",1,,Sudden-Ad7209,0
+1661429556,"^^^^automod  ***thanks for posting! this comment is a copy of your post so readers can see the original text if your post is edited or removed. this comment is not accusing you of copying anything. read [this](https://www.reddit.com/r/amitheasshole/wiki/faq#wiki_post_deletion) before [contacting the mod team](https://www.reddit.com/message/compose?to=%2fr%2famitheasshole)***
+
+i, 18f, had a lot of problems last semester  with my spanish teacher, for context, i have cptsd and relaxation exercises give me panic attacks because i cannot relax, this teacher, who we'll call ms.n required her entire class to do relaxation exercises despite it being on my 504, that i do not have to do anything related to counseling in my classes as teachers aren't properly trained to deal with the fall out of my extensive trauma. 
+
+now every single day i would have to re-explain the problem to ms.n that she could look at my 504, and that i would under no circumstances do the exercises. and multiple times she tried to write me up for insubordination, we also had multiple issues of her setting me up to be bullied by making me talk about my family in front of the class which led to a lot of mocking and bullying by other students for stupid things like having 16 siblings, or having to ask how to say ""foster parent"" in spanish. basically the entirety of last semester there was something that i had to explain to her that i couldn't do because it made me uncomfortable, i feel it important to note that no other teacher has ever had problems with the accommodations i receive, especially considering i have the proper paperwork. it got so bad that last semester for the last two days i just skipped spanish, despite having severe anxiety over being absent.
+
+this previous week i met with my counselor and multiple of my teachers and we discussed that i have to take spanish ii  and my counselor insisted i have ms.n , but i argued back in front of her that that last semester it was a different issue everyday and that i could not properly learn in an environment like that, even arguing that my ""straight a's"" didn't prober her to be a competent teacher as i make an a in every class regardless of the teacher, and that my problem is not my learning, but my comfort. eventually my counselor agreed to place me in the other spanish teacher's class, 
+
+when i got home and explained what happened with the counselor to my foster mom she said that she felt it was an asshole move to lay out all of problems bin front of ms.n and all of my other teachers, but i think that it was important for me to advocate for myself and i doubt asking for privacy would have helped. in addition to that, she is a teacher and should be accustomed to understanding that sometimes people just don't work well together. so am i the asshole?
+
+*i am a bot, and this action was performed automatically. please [contact the moderators of this subreddit](/message/compose/?to=/r/amitheasshole) if you have any questions or concerns.*",1,,AutoModerator,0
+1661445252,"&gt;\- cloning certain super investors and/or certain funds
+
+i'm sure there are very exhaustive lists of publicly traded funds/companies run by ""super investors."" curious as to what's on your list, op.
+
+i follow a few mostly out of sheer curiosity.
+
+$psh - bill ackman
+
+$iep - carl icahn
+
+$blk - larry fink
+
+$bam - bruce flatt
+
+$brk.a/b - warren buffett
+
+$fcntx - will danoff
+
+$sftby - masayoshi son",2,,Vurkgol,0
+1661447709,"what they are doing is not ok. speaking in front of ms.n probably wasn't even your choice, was it? even if it was though, it was completely within your right to speak up and it's not something you should even feel bad for, much less reprimanded in any kind of way. your foster mom is probably thinking in terms of politeness and wants you raised with manners but this is about survival and deserving an environment where you aren't re-traumatized. 
+you are doing good. you're did what you had to do to protect yourself. you asserted an important boundary. nta nta nta!",1,,SophiaF88,0
+1661450388,"ms.n is on a power trip and apparently gets enraged when she hears ""no"" from a student. she should be recorder, the recording spread and then she should be fired.",3,,National-Platypus144,0
+1661457344,buy $bac!!! slowly gaining momentum again,1,,ComplexElegant776,0
+1661457486,no one is talking about the slowly but steady recovery in $bac. go take a look yourself.,1,,ComplexElegant776,0
+1661457559,"$bac should've been on that list (of ""brk's holdings since 2012"") as well given the vast majority of that position came from the preferred stock he picked up during the gfc in 2008 (he exercised the warrants in 2017 by relinquishing the preferred shares [and he's hoping to do the same with the $oxy warrants/prefs in 2029]).",3,,mn_sunny,0
+1661459260,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1562899509817970690)
+
+&gt;blackstone’s $bx single-family unit has halted purchases in 38 cities - bloomberg
+
+ tweet mirror:[@tickerhistory](https://twitter.com/tickerhistory/status/1562900470582063105)
+
+&gt;what facebook $meta looked like in 2005: https://pbs.twimg.com/media/fbcjqvkxeaahbd6.png?format=jpg&amp;name=4096x4096",6,,HuzzahBot,0
+1661526958,all the reviews are stock images so far… and we all know how bad gs stock pictures are! they never do gs justice-,2,,BlueSmoke_9,0
+1661577668,"can't purchase from gs website, they just post where they dropped off their most recent products so you can find a dispensary by you that has gs stock.",2,,cryptogeezy,0
+1661602386,"$schd for etfs
+
+$xom for energy
+
+$blk for financials
+
+$abbv for healthcare
+
+$kmb and $kr for consumer cyclicals
+
+$aapl for tech
+
+$lmt for industrials
+
+$t for telecom
+
+$o for real estate
+
+there's a lot more, but if i had to make a concentrated portfolio of ~10% of each i'd do those. also this aubree's you can buy fractional shares, as stocks like blk are expensive",3,,SurfaceToAsh,0
+1661628832,dump your $bx monday morning and buy back at 85$ in a few weeks,0,,Bdubbs5050,0
+1661637109,"my gun came with an etu just one of g&amp;gs stock ones. i do have a perun mosfet, their etu++ to be specific and i'm fairly sure that it has cycle detection. i looked at my cutoff lever the last time i opened it, it didn't look like it was too worn out.",1,,Selky45,0
+1661691570,move out of tech. i would also look at banks and automotive … $wfc .. $f … $sofi,1,,dougfields01,0
+1661708508,"i wish i had started investing when i was 17! that’s a big progress right there- i am very happy for you! i am not an investing guru, but i would like to share some insights based on my experience:  
+
+
+\-don’t chase high dividend yield, look for quality (since you are 17, you should build a portfolio of high-quality stocks for your future self): $jnj $pfe $sny $nvs $rhhby $jpm $mmm $lrcx $amat $intc $mdt $goog $trow $csco $rio $klac $dow $tsn comes to my mind right now that are trading at a fair value
+
+  
+\-invest mostly in etfs: vti, voo, schd, $vgk, etc. (look for low expense ratios, good track record of performance, etc.)
+
+  
+\-don’t overpay, there are many other great companies at high valuations, wait for them to come down in price. to learn about valuations, learn how to read “income statements”, “balance sheets”, and “cash flow statements”. 
+
+  
+\-focus on raising your income so that you can put more money per month in safer investments like $vti $voo $schd etc. go to college if needed, get a degree that pays well, etc. (consider the tuition as an investment for future income)- but please don’t get a degree that doesn’t pay well, or in the worse case, you can’t find a job!
+
+  
+\-contribute consistently, sit back, relax, and retire in \~40 years from now. if you are in focus, you will be really wealthy in 40 years. 
+
+&amp;#x200b;
+
+good luck!!!",10,,ali_b_investing,0
+1661718250,"“ok ms stock-astronauts-mom, we just need to confirm that this is your decision.  we can call it off….”
+
+“oh hell fuck no!  let’s get on with it!”  😂
+
+i don’t want to live in a world where i cannot choose the time and place of my death when the time comes.
+
+love you mom!",4,,Stock_Astronaut_6866,0
+1661720524,i'm going to look at $jpm and $bac i see a pop of more than 7%.,0,,Successful-Bike2850,0
+1661742522,"i’m looking at some high quality stocks/etfs :
+$goog $amzn $adbe $v $nke $jnj $msft $aapl $vti $iwf $lrcx $amat $blk $qcom $klac $txn $mdt",1,,ali_b_investing,0
+1661747449,ya sottong on his ms stock must have been hard,0,,Efficient-Library792,0
+1661797157,some rumor squeeze on $bac start at today at 3:18 . can pop 10%,-5,,Successful-Bike2850,0
+1661825235,"congratulations on starting your investing journey early! i wish i had started sooner! i am not an investing guru, but here is what i am doing with my capital/ money. hopefully, this gives you some insight on my strategy: 
+
+  
+1. 401k from the employer: i am investing bi-weekly in my 401k account- i chose 4 different funds to equally contribute (25% each): 1 s&amp;p 500 fund, 1 high growth tech fund, 1 small cap fund, and 1 international fund. i do rebalance this account once or twice a year, but other than that it's purely passive ""buy &amp; hold"" investing (time horizon 15-20 years). 
+
+  
+2. roth ira account: i have a roth ira account, where i mostly invest in high-quality dividend stocks. i don’t have to pay taxes on my dividends in a roth ira account, so that’s the primary motivation for choosing a roth ira for dividend investing. i have some high-quality growth stocks too, which don’t pay any dividends now, but hopefully, in 10-15 years, they will. also, i do some active trading on this account to boost my returns: buy low/sell high (tax-free capital gains, however, the risk is if you lose the money you can’t claim a capital loss, so be careful!). some of my holdings: $goog $intc $lrcx $amat $mmm $vz $meta $baba $vti $iwf $trow $sbux $blk $jpm $csco $rio $cmcsa $dpz $adbe $mdt $klac $sny $rhhby $gsk $nvs $ul $qcom $dow 
+
+  
+3. individual brokerage account: this is my individual account where i buy high-quality growth stocks to hold for long-term (5-10 years or more). i can claim losses on this account. at the end of the year, i look at my taxable income on this account and sell some of the losers to offset my taxable capital gains. some of my holdings are: $amzn $meta $nflx $pypl $bkng $dis $ea $googl and about 25% cash to deploy (hopefully soon)
+
+  
+4. individual brokerage account (for options): a separate individual brokerage account only for options trading. this is around \~5% of my entire portfolio.   
+  
+i hope you get some idea from this…..",2,,ali_b_investing,0
+1661826309,"deck is a swap and damage deck, can basically swap-shoot-swap-shoot to skip the reload animation with admin reload. very silly but absolutely a blast. can post it if people really want to see it. 
+
+save-scummed the file in offline mode to roll the barrets, then used upgrade cards to get them to purple. literally had two purple barretts on by pain train (1-3). finally got to the midway part of the act where legendary accessories start spawning, these babies are tricked out with +80% bullet damage between the barrel and mag, +100 ws damage scope, and swap/ms stock. can kill most everything in one hit.",2,,menofthesea,0
+1661838452,"aug 30 (reuters) - morgan stanley ms.n has appointed an internal lawyer to shadow a unit of the bank subject to a federal probe into block trading, the financial times reported on tuesday, citing people briefed on the arrangement.  
+  
+the bank has ordered the lawyer to sit on its u.s. equity syndicate desk to supervise bankers and answer their legal questions, the ft report said. (https://on.ft.com/3pu6vs5).  
+  
+in february, the wall street bank said that u.s. regulators and prosecutors were probing various aspects of its block trading business.  
+  
+the bank's disclosure in february followed reports that the u.s. securities and exchange commission (sec) was investigating whether financial executives had broken rules by tipping off hedge funds ahead of large sales of shares, known as ""block trades"".  
+  
+the decision to install the lawyer on the desk was made after the firm placed pawan passi, head of the u.s. equity syndicate desk, on leave last year, the ft reported.  
+  
+the bank last week placed a second member of the equity syndicate desk, charles leisure, on leave, the report added, citing people familiar with the matter.  
+  
+morgan stanley did not immediately respond to a reuters request for comment.  
+  
+the bank's role in the collapse of archegos capital management has deepened a probe by u.s. authorities into wall street's lucrative market for block trades.  
+  
+the investment bank lost nearly $1 billion last year when bill hwang's archegos failed to meet margin calls, forcing several investment banks including morgan stanley to attempt recouping losses by liquidating shares and assets.  
+  
+(reporting by akanksha khushi in bengaluru; editing by saumyadeb chakrabarty)",42,,Snowbagels,0
+1661865890,"tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1564605040953810944)
+
+    most active stocks in today's pre market trading
+    
+    bank of america $bac
+    $amat
+    tesla $tsla
+    apple $aapl
+    $bsx
+    twitter $twtr
+    carnival $ccl
+    qualcomm $qcom
+    nvidia $nvda
+    amazon $amzn
+    ford $f
+    dexcom $dxcm
+    nike $nke
+    $amd
+    occidental $oxy
+    american $aal
+    google $googl
+    $bby
+    palantir $pltr
+    $plug
+
+ tweet mirror:[@stockmktnewz](https://twitter.com/stockmktnewz/status/1564605498871136257)
+
+&gt;*alibaba, others selected by us regulators for audit: reuters $baba",3,,HuzzahBot,0
+1661882355,"august 30, 20221:20 am edt
+last updated 13 hours ago
+u.s. markets
+morgan stanley orders internal lawyer to supervise block trading desk- ft
+reuters
+
+
+
+
+
+
+2 minute read
+the logo for morgan stanley is seen on the trading floor at the new york stock exchange (nyse) in manhattan, new york city
+the logo for morgan stanley is seen on the trading floor at the new york stock exchange (nyse) in manhattan, new york city, u.s., august 3, 2021. reuters/andrew kelly
+aug 30 (reuters) - morgan stanley (ms.n) has appointed an internal lawyer to shadow a unit of the bank subject to a federal probe into block trading, the financial times reported on tuesday, citing people briefed on the arrangement.
+
+the bank has ordered the lawyer to sit on its u.s. equity syndicate desk to supervise bankers and answer their legal questions, the ft report said. (https://on.ft.com/3pu6vs5).
+
+in february, the wall street bank said that u.s. regulators and prosecutors were probing various aspects of its block trading business.
+
+register now for free unlimited access to reuters.com
+
+register
+advertisement · scroll to continue
+
+report an ad
+the bank's disclosure in february followed reports that the u.s. securities and exchange commission (sec) was investigating whether financial executives had broken rules by tipping off hedge funds ahead of large sales of shares, known as ""block trades"".
+
+the decision to install the lawyer on the desk was made after the firm placed pawan passi, head of the u.s. equity syndicate desk, on leave last year, the ft reported.
+
+advertisement · scroll to continue
+
+report an ad
+the bank last week placed a second member of the equity syndicate desk, charles leisure, on leave, the report added, citing people familiar with the matter.
+
+morgan stanley did not immediately respond to a reuters request for comment.
+
+the bank's role in the collapse of archegos capital management has deepened a probe by u.s. authorities into wall street's lucrative market for block trades. read more
+
+advertisement · scroll to continue
+
+report an ad
+the investment bank lost nearly $1 billion last year when bill hwang's archegos failed to meet margin calls, forcing several investment banks including morgan stanley to attempt recouping losses by liquidating shares and assets.
+
+register now for free unlimited access to reuters.com
+
+register
+reporting by akanksha khushi in bengaluru; editing by saumyadeb chakrabarty",3,,Lorien6,0
+1661889761,$ms short interest? i feel it in my plums.,0,,No-Bottle-5378,0
+1661895498,"it's called dr&amp;ggs....  anyone disrespecting their children with this comment is on dr&amp;&amp;gs...she is andy's favorite just like all criminals...he's petty, racist, ignorant and admittedly does dr$$gs.  and he's a father.  typically children get removed but with $  never happening.",0,,CHEROKEEJAX74,0
+1661903776,"&gt; they’re not taking microsoft stock
+
+well, ms stock was trading under $50 in 2014 and is now over $260, so maybe they should have.",7,,cubs223425,0
+1661951208,"&gt;
+a team at morgan stanley, $ms, warned that leveraged loans could be the “canary in the credit coal mine” due to their floating interest rates and the increasingly poor creditworthiness of issuers.
+
+https://twitter.com/unusual_whales/status/1564951888574939137",17,,grissly_bear,0
+1661956216,"""this is really a marketing campaign to these banks' clients,"" says   
+ljmoynihan  
+ about $gs lifting covid protocols. ""you want a bank that is going to have employees who eat nails for breakfast... you don't want an investment bank with employees who need emotional support dogs.""
+
+&amp;#x200b;
+
+&amp;#x200b;
+
+gen z about to find out how the world worked until 2009.",8,,cutiesarustimes2,0
+1661985610,$jpm,2,,eula325,0
