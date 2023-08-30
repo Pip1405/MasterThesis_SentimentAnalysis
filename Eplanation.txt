@@ -1,0 +1,5 @@
+Es gibt zwei Datenquellen, die jeweils tägliche Daten von Januar bis Dezember 2020 beinhalten. 
+In der Portfolio_Return_Long.csv sind Renditedaten im Dezimalformat (bspw. 0.013) angegeben. 
+In den Sentiment_Results_(Financials/Energy/Technology)_Sum.csv sind absolute Sentimentwerte (bspw. 13 als positives Sentiment) gegeben.
+
+Die Forschungsfrage ist, ob Sentiments die Renditen vorhersagen können.
